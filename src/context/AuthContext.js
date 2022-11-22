@@ -44,6 +44,7 @@ export const AuthProvider = ({children}) => {
         setToken(token);
         setSplashLoading(false);
       }
+      setSplashLoading(false);
     } catch (error) {
       setSplashLoading(false);
     }
