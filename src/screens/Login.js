@@ -11,11 +11,12 @@ import React, {useContext, useState} from 'react';
 import {AuthContext} from '../context/AuthContext';
 import SimpleToast from 'react-native-simple-toast';
 import {ValidateEmail} from '../utils/customfunctions';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 export default function Login({navigation}) {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const {handleLogin} = useContext(AuthContext);
+  const {handleLogin, loading} = useContext(AuthContext);
   const handleValidation = () => {
     if (email !== null && password !== null) {
       if (ValidateEmail(email)) {
@@ -30,6 +31,7 @@ export default function Login({navigation}) {
 
   return (
     <View style={styles.container}>
+      <Spinner visible={loading} />
       <View style={styles.inner_container}>
         <Text style={styles.logintitle}>Login Here</Text>
 
