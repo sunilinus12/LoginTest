@@ -1,15 +1,8 @@
-import {
-  ActivityIndicator,
-  Dimensions,
-  FlatList,
-  Image,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import LoadingComponent from '../components/LoadingComponent';
+import {ItemCard} from '../components/ItemCard';
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -35,65 +28,6 @@ export default function Home() {
     getData();
   }, []);
 
-  const dujm = [
-    {
-      id: '60d0fe4f5311236168a109ce',
-      title: 'mr',
-      firstName: 'Rudi',
-      lastName: 'Droste',
-      picture: 'https://randomuser.me/api/portraits/med/men/83.jpg',
-    },
-  ];
-  const ItemCard = ({item}) => {
-    return (
-      <View
-        style={{
-          flex: 1,
-          height: 0.3 * Dimensions.get('screen').height,
-          marginHorizontal: 4,
-          marginVertical: 4,
-          backgroundColor: 'white',
-          padding: '4%',
-          borderRadius: 3,
-          justifyContent: 'space-between',
-        }}>
-        <View
-          style={{
-            width: '100%',
-            height: '69%',
-          }}>
-          <Image
-            style={{
-              flex: 1,
-            }}
-            source={{uri: item.picture}}
-            resizeMode="contain"
-          />
-        </View>
-        <View
-          style={{
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              fontWeight: 'bold',
-              color: 'black',
-
-              fontSize: 12,
-            }}>
-            {item.title}. {item.firstName} {item.lastName}
-          </Text>
-          <Text
-            numberOfLines={1}
-            style={{
-              fontSize: 10,
-            }}>
-            {item.firstName}.{item.lastName}@example.com
-          </Text>
-        </View>
-      </View>
-    );
-  };
   return (
     <>
       {loading ? (
