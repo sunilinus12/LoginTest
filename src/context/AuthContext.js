@@ -40,11 +40,14 @@ export const AuthProvider = ({children}) => {
       setSplashLoading(true);
       const userToken = await AsyncStorage.getItem('userToken');
       const token = JSON.parse(userToken);
-      if (token !== null) {
-        setToken(token);
+
+      setTimeout(() => {
+        if (token !== null) {
+          setToken(token);
+          setSplashLoading(false);
+        }
         setSplashLoading(false);
-      }
-      setSplashLoading(false);
+      }, 2000);
     } catch (error) {
       setSplashLoading(false);
     }
