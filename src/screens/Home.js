@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, Platform, StyleSheet, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import LoadingComponent from '../components/LoadingComponent';
@@ -63,5 +63,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 4,
     paddingBottom: 9,
+    paddingTop: Platform.OS === 'ios' ? '10%' : 0,
   },
 });

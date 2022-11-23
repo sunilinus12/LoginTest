@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Login</string>
+      <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD5wslpomZZf1MZHPKuddg9L6-DV1zFWxk</string>
+
 </resources>
