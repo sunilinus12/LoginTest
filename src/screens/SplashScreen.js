@@ -1,10 +1,17 @@
-import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
 export default function SplashScreen() {
   return (
     <View style={styles.center}>
-      <ActivityIndicator color={'black'} size={'large'} />
+      <Image
+        source={require('../assets/Login.png')}
+        style={{
+          width: '100%',
+          height: '30%',
+        }}
+        resizeMode="contain"
+      />
     </View>
   );
 }

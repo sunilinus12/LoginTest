@@ -13,7 +13,7 @@ export default function AuthStack() {
 
   return (
     <Stack.Navigator>
-      {splashLoading ? (
+      {true ? (
         <Stack.Screen
           name={'splash'}
           component={SplashScreen}
