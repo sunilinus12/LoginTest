@@ -19,7 +19,6 @@ import MapView, {Marker} from 'react-native-maps';
 export default function DetailScreen({route}) {
   const [selecteddata, setSelectedData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [location, setLocation] = useState(false);
 
   const [mapRegion, setMapRegion] = useState({
     latitude: 37.421998333333335,
@@ -58,7 +57,6 @@ export default function DetailScreen({route}) {
           },
           error => {
             console.log(error.code, error.message);
-            setLocation(false);
           },
           {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
         );

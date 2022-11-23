@@ -23,8 +23,29 @@ export default function AuthStack() {
         />
       ) : token !== null ? (
         <>
-          <Stack.Screen name={'Home'} component={Home} />
-          <Stack.Screen name={'DetailScreen'} component={DetailScreen} />
+          <Stack.Screen
+            name={'Home'}
+            component={Home}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {
+                fontSize: 16,
+                fontWeight: '500',
+              },
+            }}
+          />
+          <Stack.Screen
+            options={{
+              headerTitleAlign: 'center',
+              headerTitleStyle: {
+                fontSize: 14,
+                fontWeight: '500',
+              },
+              title: 'Detail',
+            }}
+            name={'DetailScreen'}
+            component={DetailScreen}
+          />
         </>
       ) : (
         <Stack.Screen
