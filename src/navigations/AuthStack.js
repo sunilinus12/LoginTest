@@ -5,6 +5,7 @@ import Home from '../screens/Home';
 import Login from '../screens/Login';
 import {AuthContext} from '../context/AuthContext';
 import SplashScreen from '../screens/SplashScreen';
+import DetailScreen from '../screens/DetailScreen';
 
 const Stack = createStackNavigator();
 export default function AuthStack() {
@@ -21,7 +22,10 @@ export default function AuthStack() {
           }}
         />
       ) : token !== null ? (
-        <Stack.Screen name={'Home'} component={Home} />
+        <>
+          <Stack.Screen name={'Home'} component={Home} />
+          <Stack.Screen name={'DetailScreen'} component={DetailScreen} />
+        </>
       ) : (
         <Stack.Screen
           name={'Login'}

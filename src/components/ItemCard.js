@@ -1,8 +1,21 @@
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 export function ItemCard({item}) {
+  const navigation = useNavigation();
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('DetailScreen', {id: item.id});
+      }}
+      activeOpacity={0.8}
       style={[
         styles.container,
         {height: 0.3 * Dimensions.get('screen').height},
@@ -22,7 +35,7 @@ export function ItemCard({item}) {
           {item.firstName}.{item.lastName}@example.com
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

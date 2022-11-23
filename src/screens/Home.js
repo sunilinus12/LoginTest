@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import LoadingComponent from '../components/LoadingComponent';
 import {ItemCard} from '../components/ItemCard';
+import {Base_URL, Header_Data} from '../config';
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -10,14 +11,10 @@ export default function Home() {
   const getData = async () => {
     try {
       setLoading(true);
-      const config = {
-        headers: {
-          'app-id': '6149ac924e29ce2338d6f836',
-        },
-      };
+
       let res = await axios.get(
-        'https://dummyapi.io/data/v1/user?limit=10',
-        config,
+        `${Base_URL}/data/v1/user?limit=10`,
+        Header_Data,
       );
 
       setData(res?.data?.data);
@@ -50,6 +47,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 4,
-    backgroundColor: 'pink',
+    paddingBottom: 9,
   },
 });
