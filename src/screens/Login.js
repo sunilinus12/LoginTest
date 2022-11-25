@@ -37,12 +37,14 @@ export default function Login({navigation}) {
 
         <TextInput
           placeholder="Email"
+          placeholderTextColor={'gray'}
           value={email}
           onChangeText={setEmail}
           style={[styles.input, {width: 0.8 * Dimensions.get('screen').width}]}
         />
         <TextInput
           placeholder="Password"
+          placeholderTextColor={'gray'}
           value={password}
           secureTextEntry={true}
           onChangeText={setPassword}
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     paddingVertical: 5,
     paddingHorizontal: 15,
+    color: 'black',
   },
   logintitle: {
     fontSize: 16,

@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({children}) => {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [splashLoading, setSplashLoading] = useState(false);
+  const [splashLoading, setSplashLoading] = useState(true);
   const handleLogin = async (email, password) => {
     try {
       setLoading(true);
@@ -37,7 +37,6 @@ export const AuthProvider = ({children}) => {
 
   const IsLogin = async () => {
     try {
-      setSplashLoading(true);
       const userToken = await AsyncStorage.getItem('userToken');
       const token = JSON.parse(userToken);
 
